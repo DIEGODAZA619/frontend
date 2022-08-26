@@ -2,7 +2,7 @@ var baseDoc_url = 'http://localhost/VETERINARIAPROYECTO/index.php/api/login/';
 function inicio()
 {
 	//alert("holaa");
-	var enlace = baseDoc_url + "getlistausuarios";
+	var enlace = baseDoc_url + "getMensajes";
 	$.ajax({
 		type:"GET",
 		url: enlace,
@@ -18,8 +18,8 @@ function inicio()
 			  <td>`+data.content[i].id+`</td>
 			  <td>`+data.content[i].message+`</td>
 			  <td>`+data.content[i].state+`</td>
-			  <td>`+data.content[i].fechaRegistro+`</td>
-			  <td>`+data.content[i].fechaRecepcion+`</td>
+			  <td>`+data.content[i].fecha_registro+`</td>
+			  <td>`+data.content[i].fecha_recepcion	+`</td>
 			</tr>`;
 			$("#cuerpo").append(tr)
 			}
@@ -32,7 +32,7 @@ function guardarDatos()
 {
 
 	var datoenviar = $('#txtvalora').val();;
-	var enlace = baseDoc_url + "prueba";    
+	var enlace = baseDoc_url + "mensajeGuardar";    
     $.ajax({
         type: "POST",
         url: enlace,
